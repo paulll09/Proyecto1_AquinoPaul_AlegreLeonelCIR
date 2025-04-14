@@ -95,6 +95,7 @@
 <footer class="footer">
   <div class="footer-content">
     <p>&copy; 2025 Centro Informatico Regional. Todos los derechos reservados.</p>
+    <P> hola </p>
     <div class="socials">
       <a href="https://www.instagram.com/paulc_aquino">Instagram</a>
     </div>
@@ -103,6 +104,7 @@
 
   <!-- Scripts de Bootstrap -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  
 </body>
 
 </html>
