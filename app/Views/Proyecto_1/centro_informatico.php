@@ -2,7 +2,7 @@
 <html lang="es">
 
 
-<!-- Paul te rompo el asterisco -->
+<!-- leo balín -->
 
 <header class="shadow-sm bg-white sticky-top">
   <nav class="navbar navbar-expand-lg navbar-light container py-3">
