@@ -10,49 +10,79 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Class BaseController
+ * Clase BaseController
  *
- * BaseController provides a convenient place for loading components
- * and performing functions that are needed by all your controllers.
- * Extend this class in any new controllers:
+ * BaseController proporciona un lugar conveniente para cargar componentes
+ * y realizar funciones que son necesarias para todos los controladores.
+ * Extiende esta clase en cualquier nuevo controlador:
  *     class Home extends BaseController
  *
- * For security be sure to declare any new methods as protected or private.
+ * Por seguridad, asegúrate de declarar cualquier nuevo método como protected o private.
  */
 abstract class BaseController extends Controller
 {
     /**
-     * Instance of the main Request object.
+     * Instancia del objeto Request principal.
+     * 
+     * Esta variable contiene la petición HTTP actual y proporciona
+     * métodos para acceder a los datos de la petición.
      *
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
 
     /**
-     * An array of helpers to be loaded automatically upon
-     * class instantiation. These helpers will be available
-     * to all other controllers that extend BaseController.
+     * Array de helpers que se cargarán automáticamente.
+     * 
+     * Estos helpers estarán disponibles para todos los controladores
+     * que extiendan BaseController. Útil para funciones comunes.
      *
-     * @var list<string>
+     * @var array
      */
     protected $helpers = [];
 
     /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
+     * Array de datos para pasar a las vistas.
+     * 
+     * Almacena datos que estarán disponibles en todas las vistas
+     * del sitio, como la página actual, datos de usuario, etc.
+     *
+     * @var array
      */
-    // protected $session;
+    protected $data = [];
 
     /**
+     * Asegúrate de declarar las propiedades que inicializas.
+     * La creación de propiedades dinámicas está obsoleta en PHP 8.2.
+     * 
+     * Ejemplo: protected $session;
+     */
+
+    /**
+     * Método de inicialización del controlador.
+     * 
+     * Se ejecuta automáticamente antes de cualquier método del controlador.
+     * Ideal para inicializar variables, cargar helpers, etc.
+     *
+     * @param RequestInterface $request Objeto de la petición actual
+     * @param ResponseInterface $response Objeto de la respuesta
+     * @param LoggerInterface $logger Sistema de registro de eventos
      * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        // Do Not Edit This Line
+        // No editar esta línea - Mantiene la funcionalidad base de CodeIgniter
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
+        // Aquí puedes precargar cualquier modelo, librería, etc.
+        // Ejemplo: $this->session = service('session');
 
-        // E.g.: $this->session = service('session');
+        // Inicialización de la variable de página actual
+        $uri = service('uri');                    // Obtiene el servicio URI
+        $segmento = $uri->getSegment(1);         // Obtiene el primer segmento de la URL
+        $pagina_actual = $segmento ? $segmento : 'inicio';  // Si no hay segmento, usa 'inicio'
+        
+        // Comparte la variable con todas las vistas
+        $this->data['pagina_actual'] = $pagina_actual;
     }
 }
