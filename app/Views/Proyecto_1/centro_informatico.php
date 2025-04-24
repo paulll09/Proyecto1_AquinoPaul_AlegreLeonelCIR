@@ -1,16 +1,17 @@
 <?= $this->extend('plantillas/base') ?>
 
 <?= $this->section('contenido') ?>
-  <!-- Carrusel de imágenes -->
+  <!-- Sección de Carrusel -->
   <?= $this->include('contenido/carrusel') ?>
 
-  <!-- Sección de servicios -->
+
+  <!-- Sección de Servicios -->
   <?= $this->include('contenido/servicios') ?>
 
-  <!-- Sección de contacto rápido -->
+  <!-- Sección de Contacto Rápido -->
   <?= $this->include('contenido/contactoRapido') ?>
 
-  <!-- Sección de ubicación -->
+  <!-- Sección de Ubicación -->
   <?= $this->include('contenido/ubicacion') ?>
 <?= $this->endSection() ?>
 
