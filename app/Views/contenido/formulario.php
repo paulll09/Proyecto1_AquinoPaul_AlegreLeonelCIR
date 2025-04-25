@@ -16,14 +16,14 @@
       </div>
       
       <div class="info-item mb-4">
-        <h3 class="h5 mb-2" style="color: #FF0033; font-weight: 600;">Domicilio Legal</h3>
-        <p class="mb-0" style="color: #4B5563;">Av. Principal 123, Lima, Perú</p>
+        <h3 class="h5 mb-2" style="color: #FF0033; font-weight: 600;">Domicilio</h3>
+        <p class="mb-0" style="color: #4B5563;">Sarmiento 177, El Colorado, Formosa, Argentina</p>
       </div>
       
       <div class="info-item mb-4">
         <h3 class="h5 mb-2" style="color: #FF0033; font-weight: 600;">Teléfonos</h3>
-        <p class="mb-1" style="color: #4B5563;"><i class="fas fa-phone-alt me-2" style="color: #FF0033;"></i> +51 123 4567</p>
-        <p class="mb-0" style="color: #4B5563;"><i class="fas fa-mobile-alt me-2" style="color: #FF0033;"></i> +51 987 6543</p>
+        <p class="mb-1" style="color: #4B5563;"><i class="fas fa-phone-alt me-2" style="color: #FF0033;"></i> +54 123 4567</p>
+        <p class="mb-0" style="color: #4B5563;"><i class="fas fa-mobile-alt me-2" style="color: #FF0033;"></i> +54 987 6543</p>
       </div>
       
       <div class="info-item mb-4">

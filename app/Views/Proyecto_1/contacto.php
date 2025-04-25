@@ -1,5 +1,7 @@
 <?= $this->extend('plantillas/base') ?>
 
+
+
 <?= $this->section('contenido') ?>
 <!-- Sección de Contacto -->
 <section class="contact-info py-5">

@@ -28,21 +28,12 @@
                         <i class="fas fa-users me-1"></i>Nosotros
                     </a>
                 </li>
-                <!-- Menú desplegable de servicios -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?= ($pagina_actual ?? '') === 'servicios' ? 'active fw-bold' : '' ?>" 
-                       href="#" 
-                       id="serviciosDropdown" 
-                       role="button" 
-                       data-bs-toggle="dropdown" 
-                       aria-expanded="false">
+                <!-- Botón de Servicios -->
+                <li class="nav-item">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'servicios' ? 'active fw-bold' : '' ?>" 
+                       href="<?php echo base_url('comercializacion'); ?>">
                         <i class="fas fa-laptop me-1"></i>Servicios
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
-                        <li><a class="dropdown-item" href="<?php echo base_url('servicios/reparacion'); ?>">Reparación</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('servicios/mantenimiento'); ?>">Mantenimiento</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('servicios/ventas'); ?>">Ventas</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>" 
@@ -51,12 +42,6 @@
                     </a>
                 </li>
             </ul>
-            <!-- Botón de consulta -->
-            <div class="d-flex">
-                <a href="<?php echo base_url('consulta'); ?>" class="btn btn-consulta ms-3">
-                    <i class="fas fa-comments me-1"></i>Consultanos
-                </a>
-            </div>
         </div>
     </div>
 </nav> 

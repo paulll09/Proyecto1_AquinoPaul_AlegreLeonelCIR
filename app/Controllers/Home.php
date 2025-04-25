@@ -8,6 +8,7 @@ class Home extends BaseController
 {
     public function index()
     {
+        $this->data['titulo'] = 'Centro Informático Regional';
         return view('Proyecto_1/centro_informatico', $this->data);
     }
     
@@ -18,17 +19,20 @@ class Home extends BaseController
     
     public function nosotros()
     {
+        $this->data['titulo'] = 'Sobre Nosotros - Centro Informático Regional';
         return view('Proyecto_1/nosotros', $this->data);
     }
     
     public function contacto()
     {
+        $this->data['titulo'] = 'Contáctanos - Centro Informático Regional';
         return view('Proyecto_1/contacto', $this->data);
     }
     
-    public function consulta()
+    public function comercializacion()
     {
-        return view('Proyecto_1/consulta', $this->data);
+        $this->data['titulo'] = 'Información Comercial - Centro Informático Regional';
+        return view('Proyecto_1/comercializacion', $this->data);
     }
     
     public function servicios($tipo = null)
