@@ -42,4 +42,10 @@ class Home extends BaseController
         }
         return view('Proyecto_1/servicios', $this->data);
     }
+
+    public function terminos()
+    {
+        $this->data['titulo'] = 'Términos y Usos - Centro Informático Regional';
+        return view('Proyecto_1/terminos', $this->data);
+    }
 }

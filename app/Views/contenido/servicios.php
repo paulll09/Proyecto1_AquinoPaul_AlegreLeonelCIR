@@ -1,51 +1,47 @@
-<!-- Secci√≥n de Servicios -->
+<!-- SecciÛn de Servicios -->
 <section class="features py-5" style="background-color: #F5F5F5;">
   <div class="container">
-    <h2 class="text-center mb-5" style="color: #1F2937; font-weight: 700;">Nuestras L√≠neas de Negocio</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="text-center p-4 rounded-3 bg-white shadow-sm h-100 border-top border-danger border-4" style="border-color: #FF0033 !important;">
-          <div class="feature-icon p-3 rounded-circle d-inline-flex mb-3" style="background-color: #FF0033;">
-            <i class="fas fa-laptop text-white fa-2x"></i>
-          </div>
-          <h3 class="h5 fw-bold" style="color: #1F2937;">Inform√°tica</h3>
-          <p class="mb-0" style="color: #111827;">Ofrecemos una amplia gama de productos inform√°ticos, desde computadoras hasta accesorios, con las √∫ltimas tecnolog√≠as y marcas reconocidas.</p>
+    <h2 class="text-center mb-5" style="color: #1F2937; font-weight: 700;">Nuestras LÌneas de Negocio</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-laptop text-white fa-2x"></i>
         </div>
+        <h3 class="h5 fw-bold">Inform·tica</h3>
+        <p>Ofrecemos una amplia gama de productos inform·ticos, desde computadoras hasta accesorios, con las ˙ltimas tecnologÌas y marcas reconocidas.</p>
       </div>
-      <div class="col-md-4">
-        <div class="text-center p-4 rounded-3 bg-white shadow-sm h-100 border-top border-danger border-4" style="border-color: #FF0033 !important;">
-          <div class="feature-icon p-3 rounded-circle d-inline-flex mb-3" style="background-color: #FF0033;">
-            <i class="fas fa-couch text-white fa-2x"></i>
-          </div>
-          <h3 class="h5 fw-bold" style="color: #1F2937;">Muebles</h3>
-          <p class="mb-0" style="color: #111827;">Contamos con una selecci√≥n exclusiva de muebles para el hogar y oficina, dise√±ados con calidad y estilo para cada espacio.</p>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-couch text-white fa-2x"></i>
         </div>
+        <h3 class="h5 fw-bold">Muebles</h3>
+        <p>Contamos con una selecciÛn exclusiva de muebles para el hogar y oficina, diseÒados con calidad y estilo para cada espacio.</p>
       </div>
-      <div class="col-md-4">
-        <div class="text-center p-4 rounded-3 bg-white shadow-sm h-100 border-top border-danger border-4" style="border-color: #FF0033 !important;">
-          <div class="feature-icon p-3 rounded-circle d-inline-flex mb-3" style="background-color: #FF0033;">
-            <i class="fas fa-store text-white fa-2x"></i>
-          </div>
-          <h3 class="h5 fw-bold" style="color: #1F2937;">L√≠nea Comercial</h3>
-          <p class="mb-0" style="color: #111827;">Distribuimos electrodom√©sticos y productos comerciales de las mejores marcas, garantizando calidad y durabilidad.</p>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-store text-white fa-2x"></i>
         </div>
+        <h3 class="h5 fw-bold">LÌnea Comercial</h3>
+        <p>Distribuimos electrodomÈsticos y productos comerciales de las mejores marcas, garantizando calidad y durabilidad.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Secci√≥n de Servicio T√©cnico -->
+<!-- SecciÛn de Servicio TÈcnico -->
 <section class="tech-service py-5">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="tech-service-content">
           <h2 class="tech-service-title mb-4" style="color: #1F2937; font-weight: 700; font-size: 2.5rem;">
-            Servicio T√©cnico Especializado
+            Servicio TÈcnico Especializado
           </h2>
           <div class="tech-service-description" style="color: #4B5563; font-size: 1.1rem; line-height: 1.8;">
             <p class="mb-4">
-              Nuestro equipo de t√©cnicos especializados est√° altamente capacitado para brindar soluciones t√©cnicas profesionales y eficientes. Ofrecemos:
+              Nuestro equipo de tÈcnicos especializados est· altamente capacitado para brindar soluciones tÈcnicas profesionales y eficientes. Ofrecemos:
             </p>
             <ul class="tech-service-list" style="list-style: none; padding-left: 0;">
               <li class="mb-3 d-flex align-items-center">
@@ -54,15 +50,15 @@
               </li>
               <li class="mb-3 d-flex align-items-center">
                 <i class="fas fa-check-circle me-2" style="color: #FF0033;"></i>
-                Diagn√≥stico y reparaci√≥n de hardware y software
+                DiagnÛstico y reparaciÛn de hardware y software
               </li>
               <li class="mb-3 d-flex align-items-center">
                 <i class="fas fa-check-circle me-2" style="color: #FF0033;"></i>
-                Soporte t√©cnico especializado en sitio
+                Soporte tÈcnico especializado en sitio
               </li>
               <li class="mb-3 d-flex align-items-center">
                 <i class="fas fa-check-circle me-2" style="color: #FF0033;"></i>
-                Garant√≠a en todos nuestros servicios
+                GarantÌa en todos nuestros servicios
               </li>
             </ul>
           </div>
@@ -74,7 +70,7 @@
       </div>
       <div class="col-lg-6">
         <div class="tech-service-image position-relative">
-          <img src="<?= base_url('assets/img/serviciotecnico.webp') ?>" alt="Servicio T√©cnico Especializado" class="img-fluid rounded-3 shadow-lg" style="border-radius: 15px; border: 3px solid #000000; border-left: 6px solid #FF0033; border-right: 6px solid #FF0033;">
+          <img src="<?= base_url('assets/img/serviciotecnico.webp') ?>" alt="Servicio TÈcnico Especializado" class="img-fluid rounded-3 shadow-lg" style="border-radius: 15px; border: 3px solid #000000; border-left: 6px solid #FF0033; border-right: 6px solid #FF0033;">
           <div class="tech-service-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(255,0,51,0.1), transparent); border-radius: 15px;"></div>
         </div>
       </div>

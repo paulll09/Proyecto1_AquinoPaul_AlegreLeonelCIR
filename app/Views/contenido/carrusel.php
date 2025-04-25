@@ -1,43 +1,23 @@
-<!-- Secci√≥n Hero -->
+<!-- SecciÛn Hero - Carrusel -->
 <section class="hero-section">
   <div class="hero-container">
+    <!-- Imagen Principal -->
     <div class="hero-background">
-      <img src="<?= base_url('assets/img/logofinal.jpeg') ?>" alt="Centro Inform√°tico Regional">
+      <img src="<?= base_url('assets/img/logofinal.jpeg') ?>" alt="Centro Inform·tico Regional" class="hero-image">
     </div>
+    
+    <!-- TÌtulo Principal -->
     <div class="hero-content">
       <h1 class="hero-title">
-        <span class="hero-title-line">Un lugar donde conocer los desafios de las nuevas tecnolog√≠as</span>
-        <span class="hero-title-highlight">Innovadoras</span>
+        <span class="hero-title-line">Un lugar donde conocer los desafÌos de las nuevas <span class="highlight-text">TecnologÌas</span></span>
       </h1>
       <div class="hero-description">
-        <div class="description-content">
-          <div class="description-header">
-            <h2>Soluciones Integrales</h2>
-          </div>
-          <p>Nos especializamos en brindar soluciones completas para tu hogar y oficina:</p>
-          <div class="hero-services">
-            <div class="hero-service-item">
-              <i class="fas fa-laptop-code"></i>
-              <span>Productos Inform√°ticos</span>
-            </div>
-            <div class="hero-service-item">
-              <i class="fas fa-chair"></i>
-              <span>Muebles Modernos</span>
-            </div>
-            <div class="hero-service-item">
-              <i class="fas fa-tv"></i>
-              <span>Electrodom√©sticos</span>
-            </div>
-          </div>
-          <div class="hero-guarantee">
-            <p>Garantizamos calidad y excelencia en cada producto para satisfacer las necesidades de nuestros clientes.</p>
-          </div>
-        </div>
+        <p>Nos especializamos en brindar soluciones completas para tu hogar y oficina. Garantizamos calidad y excelencia en cada producto para satisfacer las necesidades de nuestros clientes.</p>
       </div>
-      <a href="<?= base_url('servicios') ?>" class="hero-button">
-        Descubre Nuestros Servicios
-        <i class="fas fa-arrow-right"></i>
+      <a href="<?= base_url('comercializacion') ?>" class="hero-button">
+        Descubre nuestros servicios
       </a>
     </div>
   </div>
 </section>
+

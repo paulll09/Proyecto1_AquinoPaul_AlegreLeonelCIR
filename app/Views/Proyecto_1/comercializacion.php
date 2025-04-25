@@ -108,6 +108,52 @@
     </div>
 </section>
 
+  <!-- Procedimientos de Venta -->
+  <div class="terms-content">
+            <div class="terms-section-title">
+                <h2>Procedimientos de Venta</h2>
+                <div class="title-decoration"></div>
+            </div>
+            <div class="terms-grid">
+                <!-- Garantías -->
+                <div class="terms-card">
+                    <div class="terms-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantías</h3>
+                    <p>Todos nuestros productos cuentan con garantía de fábrica. El período de garantía varía según el producto y el fabricante.</p>
+                </div>
+
+                <!-- Soporte Postventa -->
+                <div class="terms-card">
+                    <div class="terms-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte Postventa</h3>
+                    <p>Ofrecemos soporte técnico especializado para todos nuestros productos. Nuestro equipo está disponible para asistirlo en cualquier consulta.</p>
+                </div>
+
+                <!-- Entregas -->
+                <div class="terms-card">
+                    <div class="terms-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Entregas</h3>
+                    <p>Realizamos entregas en toda la provincia de Formosa y parte del Chaco. Los tiempos de entrega varían según la ubicación.</p>
+                </div>
+
+                <!-- Tiempos -->
+                <div class="terms-card">
+                    <div class="terms-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Tiempos</h3>
+                    <p>Los tiempos de entrega estimados son de 24 a 48 horas hábiles para productos en stock. Para productos especiales, consultar disponibilidad.</p>
+                </div>
+            </div>
+        </div>
+
+
 <!-- SecciÃ³n de Contacto RÃ¡pido -->
 <?= $this->include('contenido/contactoRapido') ?>
 

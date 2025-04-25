@@ -41,6 +41,12 @@
                         <i class="fas fa-envelope me-1"></i>Contacto
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'terminos' ? 'active fw-bold' : '' ?>" 
+                       href="<?php echo base_url('terminos'); ?>">
+                        <i class="fas fa-home me-1"></i>Terminos y Usos
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
