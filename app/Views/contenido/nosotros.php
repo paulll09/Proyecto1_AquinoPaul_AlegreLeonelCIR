@@ -1,6 +1,3 @@
-<?= $this->extend('plantillas/base') ?>
-
-<?= $this->section('contenido') ?>
 <!-- Sección de About -->
 <section class="about-section">
     <div class="about-container">
@@ -63,8 +60,3 @@
         </div>
     </div>
 </section>
-<?= $this->endSection() ?>
-
-<?= $this->section('scripts_adicionales') ?>
-<script src="<?= base_url('assets/js/main.js') ?>"></script>
-<?= $this->endSection() ?>

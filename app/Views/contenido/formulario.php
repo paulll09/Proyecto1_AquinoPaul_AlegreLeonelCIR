@@ -12,7 +12,7 @@
       
       <div class="info-item mb-4">
         <h3 class="h5 mb-2" style="color: #FF0033; font-weight: 600;">Razón Social</h3>
-        <p class="mb-0" style="color: #4B5563;">TECNOLOGÍA Y SOLUCIONES S.A.C.</p>
+        <p class="mb-0" style="color: #4B5563;">TECNOLOGÝA Y SOLUCIONES S.A.C.</p>
       </div>
       
       <div class="info-item mb-4">
@@ -28,7 +28,7 @@
       
       <div class="info-item mb-4">
         <h3 class="h5 mb-2" style="color: #FF0033; font-weight: 600;">Correo Electrónico</h3>
-        <p class="mb-0" style="color: #4B5563;"><i class="fas fa-envelope me-2" style="color: #FF0033;"></i> info@tecnologiaysoluciones.com</p>
+        <p class="mb-0" style="color: #4B5563;"><i class="fas fa-envelope me-2" style="color: #FF0033;"></i> centro_informatico_regional@gmail.com</p>
       </div>
       
       <div class="info-item">

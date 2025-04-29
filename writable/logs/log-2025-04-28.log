@@ -1,0 +1,36 @@
+CRITICAL - 2025-04-28 23:25:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Proyecto_1/centro_informatico.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Proyecto_1/centro_informatico.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Proyecto_1/centro_informatico', [], true)
+ 3 APPPATH\Controllers\Home.php(12): view('Proyecto_1/centro_informatico', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:25:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Proyecto_1/centro_informatico.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Proyecto_1/centro_informatico.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Proyecto_1/centro_informatico', [], true)
+ 3 APPPATH\Controllers\Home.php(12): view('Proyecto_1/centro_informatico', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-28 23:49:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Proyecto_1/terminos.php"
+[Method: GET, Route: terminos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Proyecto_1/terminos.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Proyecto_1/terminos', [], true)
+ 3 APPPATH\Controllers\Home.php(41): view('Proyecto_1/terminos', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->terminos()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

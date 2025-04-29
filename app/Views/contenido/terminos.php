@@ -1,6 +1,3 @@
-<?= $this->extend('plantillas/base') ?>
-
-<?= $this->section('contenido') ?>
 <!-- Sección de Términos y Condiciones -->
 <section class="terms-section">
     <div class="terms-container">
@@ -42,8 +39,3 @@
 
     </div>
 </section>
-<?= $this->endSection() ?>
-
-<?= $this->section('scripts_adicionales') ?>
-<script src="<?= base_url('assets/js/main.js') ?>"></script>
-<?= $this->endSection() ?> 

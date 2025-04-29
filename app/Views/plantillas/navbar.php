@@ -44,7 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link <?= ($pagina_actual ?? '') === 'terminos' ? 'active fw-bold' : '' ?>" 
                        href="<?php echo base_url('terminos'); ?>">
-                        <i class="fas fa-home me-1"></i>Terminos y Usos
+                        <i class="fas fa-file-contract me-1"></i>Terminos y Usos
                     </a>
                 </li>
             </ul>
