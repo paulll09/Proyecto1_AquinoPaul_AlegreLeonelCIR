@@ -17,37 +17,43 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <!-- Enlaces del menú principal -->
                 <li class="nav-item">
-                    <a class="nav-link <?= ($pagina_actual ?? '') === 'inicio' ? 'active fw-bold' : '' ?>" 
-                       href="<?php echo base_url('inicio'); ?>">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'inicio' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('inicio'); ?>">
                         <i class="fas fa-home me-1"></i>Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($pagina_actual ?? '') === 'nosotros' ? 'active fw-bold' : '' ?>" 
-                       href="<?php echo base_url('nosotros'); ?>">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'nosotros' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('nosotros'); ?>">
                         <i class="fas fa-users me-1"></i>Nosotros
                     </a>
                 </li>
                 <!-- Botón de Servicios -->
                 <li class="nav-item">
-                    <a class="nav-link <?= ($pagina_actual ?? '') === 'servicios' ? 'active fw-bold' : '' ?>" 
-                       href="<?php echo base_url('comercializacion'); ?>">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'servicios' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('comercializacion'); ?>">
                         <i class="fas fa-laptop me-1"></i>Servicios
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>" 
-                       href="<?php echo base_url('contacto'); ?>">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('contacto'); ?>">
                         <i class="fas fa-envelope me-1"></i>Contacto
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($pagina_actual ?? '') === 'terminos' ? 'active fw-bold' : '' ?>" 
-                       href="<?php echo base_url('terminos'); ?>">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'terminos' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('terminos'); ?>">
                         <i class="fas fa-file-contract me-1"></i>Terminos y Usos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= ($pagina_actual ?? '') === 'login' ? 'active fw-bold' : '' ?>"
+                        href="<?php echo base_url('login'); ?>">
+                        <i class="fas fa-sign-in-alt"></i></i> Iniciar Sesión
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-</nav> 
+</nav>

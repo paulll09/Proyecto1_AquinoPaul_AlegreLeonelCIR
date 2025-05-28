@@ -41,4 +41,10 @@ class Home extends BaseController
         $this->data['titulo'] = 'Términos y Usos - Centro Informático Regional';
         return view('Proyecto_1/terminos_view', $this->data);
     }
+
+    public function login()
+    {
+        $this->data['titulo'] = 'Iniciar Sesión - Centro Informático Regional';
+        return view('Proyecto_1/login_view', $this->data);
+    }
 }
