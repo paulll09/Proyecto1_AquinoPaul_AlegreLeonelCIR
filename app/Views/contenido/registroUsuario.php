@@ -1,15 +1,5 @@
 <div class="container mt-5" style="max-width: 400px;">
-    <h3 class="mb-4 text-center">Iniciar Sesión</h3>
-
-    <?php if (session()->getFlashdata('mensaje')): ?>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: '<?= session()->getFlashdata('mensaje'); ?>',
-                confirmButtonColor: '#FF0033'
-            });
-        </script>
-    <?php endif; ?>
+    <h3 class="mb-4 text-center">Registro</h3>
 
     <?php if (!empty($validation)): ?>
         <div class="alert alert-danger">
@@ -21,8 +11,23 @@
         </div>
     <?php endif; ?>
 
-    <?= form_open('login/validar') ?>
+    <?= form_open('registro/guardar') ?>
     <?= csrf_field() ?>
+
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Tu apellido" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Tu teléfono" required>
+    </div>
 
     <div class="mb-3">
         <label for="email" class="form-label">Correo Electrónico</label>
@@ -35,15 +40,9 @@
     </div>
 
     <div class="d-grid">
-        <button type="submit" class="btn btn-primary">
-            <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-user-check me-2"></i> Registrarme
         </button>
-    </div>
-
-    <div class="mt-3 text-center">
-        <a href="registrar" class="btn btn-secondary">
-            <i class="fas fa-user-plus me-2"></i> Registrarme
-        </a>
     </div>
 
     <?= form_close() ?>

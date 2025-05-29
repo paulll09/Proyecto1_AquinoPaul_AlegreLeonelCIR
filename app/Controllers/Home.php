@@ -47,4 +47,10 @@ class Home extends BaseController
         $this->data['titulo'] = 'Iniciar Sesión - Centro Informático Regional';
         return view('Proyecto_1/login_view', $this->data);
     }
+
+    public function registrar()
+    {
+        $this->data['titulo'] = 'Registro de Usuario - Centro Informático Regional';
+        return view('Proyecto_1/registroUsuario_view', $this->data);
+    }
 }
