@@ -1,11 +1,11 @@
 <div class="container mt-5" style="max-width: 400px;">
     <h3 class="mb-4 text-center">Iniciar Sesión</h3>
 
-    <?php if (session()->getFlashdata('mensaje')): ?>
+    <?php if (isset($_GET['cerrada']) && $_GET['cerrada'] == 1): ?>
         <script>
             Swal.fire({
                 icon: 'success',
-                title: '<?= session()->getFlashdata('mensaje'); ?>',
+                title: 'sesion cerrada correctamente.',
                 confirmButtonColor: '#FF0033'
             });
         </script>

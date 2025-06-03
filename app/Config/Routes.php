@@ -20,4 +20,7 @@ $routes->get('logout', 'UsuariosController::cerrar_sesion');
 $routes->get('user_admin', 'UsuariosController::admin');
 $routes->get('registrar', 'UsuariosController::mostrar_formulario_registro');
 $routes->post('registro/guardar', 'UsuariosController::registrar_usuario'); //Ruta para registrar un nuevo usuario, que llama al método registrar_usuario del controlador UsuariosController.
+$routes->get('admin/registrar_producto', 'ProductoController::form_agregar_producto');
+$routes->post('insertar_producto', 'ProductoController::registrar_producto');
+
 

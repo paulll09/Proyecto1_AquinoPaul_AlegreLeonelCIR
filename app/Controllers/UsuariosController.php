@@ -177,9 +177,8 @@ class UsuariosController extends BaseController
     public function cerrar_sesion()
     {
         $session = session();
-        $session->setFlashdata('mensaje', 'Sesión cerrada correctamente.');
-        return redirect()->to(base_url('login'));
-        $session->destroy(); // Mueve la destrucción después de la redirección.
+        $session->destroy(); 
+        return redirect()->to(base_url('login?cerrada=1'));
     }
 
     public function admin()
