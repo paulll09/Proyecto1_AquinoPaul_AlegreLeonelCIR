@@ -10,7 +10,7 @@
             </ul>
         </div>
     <?php endif; ?>
-
+ 
     <?= form_open('registro/guardar') ?>
     <?= csrf_field() ?>
 

@@ -1,4 +1,4 @@
-<?= $this->extend('plantillas/base') ?>
+<?php $this->extend('plantillas/base') ?>
 
 <?= $this->section('titulo') ?>
 Agregar Producto

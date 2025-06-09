@@ -23,5 +23,7 @@ $routes->post('registro/guardar', 'UsuariosController::registrar_usuario'); //Ru
 $routes->get('admin/registrar_producto', 'ProductoController::form_agregar_producto');
 $routes->post('insertar_producto' , 'ProductoController::registrar_producto');
 $routes->get('admin/gestionar_productos', 'ProductoController::gestionar_productos');
-
-
+$routes->get('eliminar_producto/(:num)', 'ProductoController::eliminar_producto/$1');
+$routes->get('activar_producto/(:num)', 'ProductoController::activar_producto/$1');
+$routes->get('editar_producto/(:num)', 'ProductoController::editar_producto/$1');
+$routes->post('actualizar_producto/(:num)', 'ProductoController::actualizar_producto/$1');
