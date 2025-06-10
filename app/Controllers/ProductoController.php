@@ -212,4 +212,11 @@ class ProductoController extends BaseController
         $producto->update($id, $data);
         return redirect()->route('admin/gestionar_productos')->with('mensaje', '¡Producto activado correctamente!');
     }
+
+    public function listar_productos(){
+        $productoModel = new ProductoModel();
+        $data['producto']= $productoModel->where('producto_estado',1)->where('stock >',0)->join('producto_categoria', 'producto_categoria.id_categoria = productos.producto_categoria')->findAll();
+        $data['titulo'] = 'Catálogo de Productos';
+        return view('Views/backend/producto/catalogo_productos_view', $data);
+    }
 }

@@ -1,7 +1,7 @@
-<?php 
-    $perfil = session()->get('perfil') ?? 0; // Perfil por defecto visitante (0)
-    $login = session()->get('login') ?? false;
-    $nombreUsuario = session()->get('nombre') ?? '';
+<?php
+$perfil = session()->get('perfil') ?? 0; // Perfil por defecto visitante (0)
+$login = session()->get('login') ?? false;
+$nombreUsuario = session()->get('nombre') ?? '';
 ?>
 
 <nav class="navbar navbar-expand-lg">
@@ -37,6 +37,7 @@
                         <a class="nav-link <?= ($pagina_actual ?? '') === 'servicios' ? 'active fw-bold' : '' ?>" href="<?= base_url('comercializacion'); ?>">
                             <i class="fas fa-laptop me-1"></i>Servicios
                         </a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>" href="<?= base_url('contacto'); ?>">
@@ -64,11 +65,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/productos'); ?>">
-                                <i class="fas fa-boxes"></i> Listar Productos
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('admin/ventas'); ?>">
                                 <i class="fas fa-file-invoice"></i> Listar Ventas
                             </a>
@@ -80,6 +76,11 @@
                         </li>
                     <?php elseif ($perfil == 2): ?>
                         <!-- Navbar del Cliente (Perfil 2) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('admin/productos'); ?>">
+                                <i class="fas fa-boxes"></i> Catálogo
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('carrito'); ?>">
                                 <i class="fas fa-shopping-cart me-1"></i>Ver Carrito

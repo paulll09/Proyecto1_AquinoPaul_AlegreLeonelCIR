@@ -53,7 +53,7 @@ body {
         font-size: 0.9rem;
     }
 
-    /* Ajustes para la sección de términos */
+    /* Ajustes para la secciï¿½n de tï¿½rminos */
     .terms-section {
         padding: 2rem 0;
     }
@@ -110,7 +110,7 @@ body {
         font-size: 0.95rem;
     }
 
-    /* Ajustes para la sección de servicios */
+    /* Ajustes para la secciï¿½n de servicios */
     .services-section {
         padding: 2rem 0;
     }
@@ -137,7 +137,7 @@ body {
         font-size: 0.95rem;
     }
 
-    /* Ajustes para la sección de ubicación */
+    /* Ajustes para la secciï¿½n de ubicaciï¿½n */
     .location-section {
         padding: 2rem 0;
     }
@@ -170,7 +170,7 @@ body {
     }
 }
 
-/* Ajustes adicionales para pantallas muy pequeñas */
+/* Ajustes adicionales para pantallas muy pequeï¿½as */
 @media (max-width: 480px) {
     .hero-section {
         height: 50vh;
@@ -223,7 +223,7 @@ body {
     }
 }
 
-/* Estilos de la barra de navegación */
+/* Estilos de la barra de navegaciï¿½n */
 .navbar {
   padding: 0.8rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -250,7 +250,7 @@ body {
   color: #1F2937;
 }
 
-/* Estilos para los enlaces de navegación */
+/* Estilos para los enlaces de navegaciï¿½n */
 .navbar-nav .nav-link {
   font-weight: 500;
   margin-right: 1.5rem;
@@ -261,7 +261,7 @@ body {
   text-decoration: none;
 }
 
-/* Estilos específicos para el dropdown */
+/* Estilos especï¿½ficos para el dropdown */
 .dropdown-toggle::after {
   color: #1F2937;
   border-top-color: #1F2937;
@@ -652,7 +652,7 @@ body {
   }
 }
 
-/* Estilos del pie de página */
+/* Estilos del pie de pï¿½gina */
 .footer {
   background-color: #333;
   color: white;
@@ -744,7 +744,7 @@ body {
   }
 }
 
-/* Estilos de la sección de ubicación */
+/* Estilos de la secciï¿½n de ubicaciï¿½n */
 .location-section {
   padding: 5rem 0;
   background-color: #f8f9fa;
@@ -820,7 +820,7 @@ body {
   border: none;
 }
 
-/* Estilos responsivos para la sección de ubicación */
+/* Estilos responsivos para la secciï¿½n de ubicaciï¿½n */
 @media (max-width: 992px) {
   .location-info {
       text-align: center;
@@ -838,7 +838,7 @@ body {
   }
 }
 
-/* Estilos de la sección About */
+/* Estilos de la secciï¿½n About */
 .about-section {
     padding: 5rem 0;
     background: linear-gradient(to bottom, #f8f9fa, #ffffff);
@@ -902,7 +902,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Estilos de la sección de propuesta */
+/* Estilos de la secciï¿½n de propuesta */
 .proposal-section {
     margin-top: 5rem;
 }
@@ -991,7 +991,7 @@ body {
     }
 }
 
-/* Estilos para la descripción del hero */
+/* Estilos para la descripciï¿½n del hero */
 .hero-content-description {
     margin-top: 2rem;
     padding: 2rem;
@@ -1096,7 +1096,7 @@ body {
     }
 }
 
-/* Estilos de la sección de servicios */
+/* Estilos de la secciï¿½n de servicios */
 .services-section {
   padding: 5rem 0;
   background-color: #f8f9fa;
@@ -1258,7 +1258,7 @@ body {
   color: #FF0033;
 }
 
-/* Animación de entrada para las tarjetas */
+/* Animaciï¿½n de entrada para las tarjetas */
 @keyframes cardEntrance {
   from {
     opacity: 0;
@@ -1335,7 +1335,7 @@ body {
   transform: translateX(5px);
 }
 
-/* Estilos responsivos para la sección de servicios */
+/* Estilos responsivos para la secciï¿½n de servicios */
 @media (max-width: 768px) {
   .services-section {
     padding: 3rem 0;
@@ -1425,7 +1425,7 @@ body {
   }
 }
 
-/* Estilos de la sección de Términos y Condiciones */
+/* Estilos de la secciï¿½n de Tï¿½rminos y Condiciones */
 .terms-section {
     padding: 5rem 0;
     background: linear-gradient(to bottom, #f8f9fa, #ffffff);
@@ -1499,7 +1499,7 @@ body {
 }
 
 .terms-list li::before {
-    content: '•';
+    content: 'ï¿½';
     color: #FF0033;
     position: absolute;
     left: 0;
@@ -1591,7 +1591,7 @@ body {
     }
 }
 
-/* Estilos de la sección de Comercialización */
+/* Estilos de la secciï¿½n de Comercializaciï¿½n */
 .comercializacion-hero {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 5rem 0;
@@ -1609,7 +1609,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Estilos de la sección Formas de Pago */
+/* Estilos de la secciï¿½n Formas de Pago */
 .formas-pago {
     padding: 5rem 0;
 }
@@ -1646,7 +1646,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Estilos de la sección Información para el Cliente */
+/* Estilos de la secciï¿½n Informaciï¿½n para el Cliente */
 .info-cliente {
     background-color: #F5F5F5;
     padding: 5rem 0;
@@ -1680,7 +1680,7 @@ body {
     color: #FF0033 !important;
 }
 
-/* Estilos responsivos para la sección de Comercialización */
+/* Estilos responsivos para la secciï¿½n de Comercializaciï¿½n */
 @media (max-width: 768px) {
     .comercializacion-hero {
         padding: 3rem 0;
@@ -1711,4 +1711,5 @@ body {
     .requirement-item {
         margin-bottom: 1rem;
     }
+
 }

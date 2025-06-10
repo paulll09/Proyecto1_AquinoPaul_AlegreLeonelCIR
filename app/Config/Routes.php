@@ -27,3 +27,9 @@ $routes->get('eliminar_producto/(:num)', 'ProductoController::eliminar_producto/
 $routes->get('activar_producto/(:num)', 'ProductoController::activar_producto/$1');
 $routes->get('editar_producto/(:num)', 'ProductoController::editar_producto/$1');
 $routes->post('actualizar_producto/(:num)', 'ProductoController::actualizar_producto/$1');
+$routes->get('admin/productos', 'ProductoController::listar_productos');
+$routes->get('add_cart', 'CarritoController::agregar_carrito');
+$routes->get('carrito', 'CarritoController::ver_carrito');
+$routes->post('add_cart', 'CarritoController::agregar_carrito');
+$routes->get('ver_carrito', 'CarritoController::ver_carrito');
+
