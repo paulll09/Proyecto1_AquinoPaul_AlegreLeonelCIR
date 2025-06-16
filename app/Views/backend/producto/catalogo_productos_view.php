@@ -5,6 +5,8 @@ Catálogo de Productos
 <?= $this->endSection() ?>
 
 <?= $this->section('contenido') ?>
+
+
 <div class="container py-5">
     <h1 class="display-4 text-center mb-5">Catálogo de Productos</h1>
     <div class="row g-4">
@@ -19,7 +21,6 @@ Catálogo de Productos
                         <p class="card-text fw-bold text-success fs-5 mb-1">$<?php echo $row['precio']; ?></p>
                         <p class="card-text mb-1"><span class="badge bg-secondary">Categoría: <?php echo $row['categoria_descripcion']; ?></span></p>
                         <p class="card-text mb-3">Stock disponible: <strong><?php echo $row['stock']; ?></strong></p>
-                        <a href="<?php echo base_url('producto/' . $row['id_producto']); ?>" class="btn btn-outline-primary mt-auto">Ver Detalles</a>
 
                         <?php if (session('login')): ?>
                             <?= form_open('add_cart') ?>

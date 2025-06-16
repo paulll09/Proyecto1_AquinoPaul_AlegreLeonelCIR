@@ -9,6 +9,7 @@
   <!-- Enlaces a hojas de estilo -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"> <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/estilos.css'); ?>"> <!-- Estilos personalizados -->
+
   <!-- Agregamos Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

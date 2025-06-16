@@ -32,4 +32,7 @@ $routes->get('add_cart', 'CarritoController::agregar_carrito');
 $routes->get('carrito', 'CarritoController::ver_carrito');
 $routes->post('add_cart', 'CarritoController::agregar_carrito');
 $routes->get('ver_carrito', 'CarritoController::ver_carrito');
-
+$routes->get('eliminar_item/(:any)', 'CarritoController::eliminar_item/$1');
+$routes->get('vaciar_carrito', 'CarritoController::vaciar_carrito');
+$routes->get('productos', 'ProductoController::listar_productos');
+$routes->get('ventas', 'CarritoController::guardar_venta');

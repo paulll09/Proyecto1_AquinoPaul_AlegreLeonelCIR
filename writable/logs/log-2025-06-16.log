@@ -1,0 +1,93 @@
+DEBUG - 2025-06-16 17:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-16 17:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-16 17:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-06-16 17:39:09 --> mysqli_sql_exception: Table 'bd_alegreleonel_aquinopaul.personas' doesn't exist in engine in C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\app\Controllers\UsuariosController.php(143): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\CodeIgniter.php(933): App\Controllers\UsuariosController->buscar_usuario()
+#8 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#9 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\CodeIgniter\Proyecto_Aquino_Paul\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-16 17:39:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_alegreleonel_aquinopaul.personas' doesn't exist in engine
+[Method: POST, Route: login/validar]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `personas`
+WHERE `persona_mail` = :persona_mail:
+AND `persona_estado` = :persona_estado:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\UsuariosController.php(143): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuariosController->buscar_usuario()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 17:39:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_alegreleonel_aquinopaul.personas' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `personas`
+WHERE `persona_mail` = \'aquinopaul2002@gmail.com\'
+AND `persona_estado` = 1
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `personas`
+WHERE `persona_mail` = \'aquinopaul2002@gmail.com\'
+AND `persona_estado` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `personas`
+WHERE `persona_mail` = :persona_mail:
+AND `persona_estado` = :persona_estado:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\UsuariosController.php(143): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuariosController->buscar_usuario()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-16 17:39:09 --> [Caused by] mysqli_sql_exception: Table 'bd_alegreleonel_aquinopaul.personas' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `personas`
+WHERE `persona_mail` = \'aquinopaul2002@gmail.com\'
+AND `persona_estado` = 1
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `personas`
+WHERE `persona_mail` = \'aquinopaul2002@gmail.com\'
+AND `persona_estado` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `personas`
+WHERE `persona_mail` = \'aquinopaul2002@gmail.com\'
+AND `persona_estado` = 1
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `personas`
+WHERE `persona_mail` = :persona_mail:
+AND `persona_estado` = :persona_estado:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\UsuariosController.php(143): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuariosController->buscar_usuario()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
