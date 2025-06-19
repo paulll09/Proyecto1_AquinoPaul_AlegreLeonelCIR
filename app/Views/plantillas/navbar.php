@@ -51,63 +51,59 @@ $nombreUsuario = session()->get('nombre') ?? '';
                     </li>
                 <?php endif; ?>
 
-                <?php if ($login): ?>
-                    <?php if ($perfil == 1): ?>
-                        <!-- Navbar del Administrador -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/registrar_producto'); ?>">
-                                <i class="fas fa-plus-circle"></i> Registrar Producto
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/gestionar_productos'); ?>">
-                                <i class="fas fa-cogs"></i> Gestionar Productos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/ventas'); ?>">
-                                <i class="fas fa-file-invoice"></i> Listar Ventas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/consultas'); ?>">
-                                <i class="fas fa-question-circle"></i> Ver Consultas
-                            </a>
-                        </li>
-                    <?php elseif ($perfil == 2): ?>
-                        <!-- Navbar del Cliente (Perfil 2) -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('admin/productos'); ?>">
-                                <i class="fas fa-boxes"></i> Catálogo
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('carrito'); ?>">
-                                <i class="fas fa-shopping-cart me-1"></i>Ver Carrito
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link text-success fw-bold">
-                                <i class="fas fa-user me-1"></i><?= $nombreUsuario; ?>
-                            </span>
-                        </li>
-                    <?php endif; ?>
+               <?php if ($login): ?>
+    <?php if ($perfil == 1): ?>
+        <!-- Navbar del Administrador -->
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('admin/registrar_producto'); ?>">
+                <i class="fas fa-plus-circle me-2"></i> Registrar Producto
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('admin/gestionar_productos'); ?>">
+                <i class="fas fa-cogs me-2"></i> Gestionar Productos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('admin/ventas'); ?>">
+                <i class="fas fa-file-invoice me-2"></i> Listar Ventas
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('admin/consultas'); ?>">
+                <i class="fas fa-question-circle me-2"></i> Ver Consultas
+            </a>
+        </li>
+    <?php elseif ($perfil == 2): ?>
+        <!-- Navbar del Cliente -->
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('admin/productos'); ?>">
+                <i class="fas fa-boxes me-2"></i> Catálogo
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="<?= base_url('carrito'); ?>">
+                <i class="fas fa-shopping-cart me-2"></i> Ver Carrito
+            </a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+            <span class="nav-link text-success fw-bold">
+                <i class="fas fa-user me-2"></i><?= esc($nombreUsuario); ?>
+            </span>
+        </li>
+    <?php endif; ?>
 
-                    <!-- Botón salir para usuarios logueados -->
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="<?= base_url('logout'); ?>">
-                            <i class="fas fa-sign-out-alt me-1"></i>Salir
-                        </a>
-                    </li>
-                <?php else: ?>
-                    <!-- Botón Iniciar sesión para visitantes -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('login'); ?>">
-                            <i class="fas fa-sign-in-alt me-1"></i>Iniciar Sesión
-                        </a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-    </div>
-</nav>
+    <!-- Botón salir -->
+    <li class="nav-item">
+        <a class="nav-link text-danger d-flex align-items-center" href="<?= base_url('logout'); ?>">
+            <i class="fas fa-sign-out-alt me-2"></i> Salir
+        </a>
+    </li>
+<?php else: ?>
+    <!-- Botón iniciar sesión -->
+    <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="<?= base_url('login'); ?>">
+            <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+        </a>
+    </li>
+<?php endif; ?>

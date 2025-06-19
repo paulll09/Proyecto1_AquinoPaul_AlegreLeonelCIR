@@ -83,5 +83,23 @@ class MensajeContactoController extends BaseController
 
 
         }
+         
     }
+
+    public function listarConsultas()
+    {
+        $model = new MensajesContactoModel();
+        $data['consultas'] = $model->findAll();
+
+        return view('Views/backend/consultas/listar_consultas_view', $data);
+    }
+
+    public function eliminarConsulta($id)
+    {
+        $model = new MensajesContactoModel();
+        $model->delete($id);
+
+        return redirect()->route('listarConsultas')->with('mensaje', 'Consulta eliminada correctamente.');
+    }
+
 }

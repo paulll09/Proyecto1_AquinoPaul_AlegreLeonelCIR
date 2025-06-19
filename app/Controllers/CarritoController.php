@@ -93,7 +93,8 @@ class CarritoController extends BaseController
         }
 
         // Vaciar el carrito después de guardar la venta
-        $cart->destroy();
+         $cart->destroy();
         return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'Venta realizada con éxito');
+      
     }
 }

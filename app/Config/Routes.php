@@ -36,3 +36,5 @@ $routes->get('eliminar_item/(:any)', 'CarritoController::eliminar_item/$1');
 $routes->get('vaciar_carrito', 'CarritoController::vaciar_carrito');
 $routes->get('productos', 'ProductoController::listar_productos');
 $routes->get('ventas', 'CarritoController::guardar_venta');
+$routes->get('admin/ventas', 'VentasController::listar_ventas');
+$routes->get('admin/consultas', 'MensajeContactoController::listarConsultas');
