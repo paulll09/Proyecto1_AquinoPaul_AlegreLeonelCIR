@@ -213,10 +213,47 @@ class ProductoController extends BaseController
         return redirect()->route('admin/gestionar_productos')->with('mensaje', '¡Producto activado correctamente!');
     }
 
-    public function listar_productos(){
+    public function listar_productos()
+    {
         $productoModel = new ProductoModel();
-        $data['producto']= $productoModel->where('producto_estado',1)->where('stock >',0)->join('producto_categoria', 'producto_categoria.id_categoria = productos.producto_categoria')->findAll();
+        $categoriaModel = new CategoriaProductoModel();
+
+        // Obtener parámetros de la URL
+        $buscar = $this->request->getGet('buscar');
+        $categoria = $this->request->getGet('categoria');
+        $orden_precio = $this->request->getGet('orden_precio');
+
+        // Construir la consulta
+        $builder = $productoModel->select('productos.*, producto_categoria.categoria_descripcion as categoria_descripcion')
+            ->join('producto_categoria', 'producto_categoria.id_categoria = productos.producto_categoria')
+            ->where('productos.producto_estado', 1);
+
+        if ($buscar) {
+            $builder->like('productos.nombre', $buscar);
+        }
+
+        if ($categoria) {
+            $builder->where('productos.producto_categoria', $categoria);
+        }
+
+        if ($orden_precio === 'asc' || $orden_precio === 'desc') {
+            $builder->orderBy('productos.precio', $orden_precio);
+        } else {
+            $builder->orderBy('productos.nombre', 'asc');
+        }
+
+        // Obtener resultados
+        $data['producto'] = $builder->findAll();
+
+        // Categorías para el formulario de filtro
+        $data['categorias'] = $categoriaModel->findAll();
+
+        // Pasar filtros para mantener valores en el formulario
+        $data['buscar'] = $buscar;
+        $data['categoria'] = $categoria;
+        $data['orden_precio'] = $orden_precio;
         $data['titulo'] = 'Catálogo de Productos';
+
         return view('Views/backend/producto/catalogo_productos_view', $data);
     }
 }

@@ -38,3 +38,5 @@ $routes->get('productos', 'ProductoController::listar_productos');
 $routes->get('ventas', 'CarritoController::guardar_venta');
 $routes->get('admin/ventas', 'VentasController::listar_ventas');
 $routes->get('admin/consultas', 'MensajeContactoController::listarConsultas');
+$routes->get('productos/listar', 'ProductoController::listar_productos');
+$routes->post('actualizar_item', 'CarritoController::actualizar_item');
