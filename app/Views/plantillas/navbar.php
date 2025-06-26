@@ -37,12 +37,6 @@ $nombreUsuario = session()->get('nombre') ?? '';
                         <a class="nav-link <?= ($pagina_actual ?? '') === 'comercializacion' ? 'active fw-bold' : '' ?>" href="<?= base_url('comercializacion'); ?>">
                             <i class="fas fa-laptop me-1"></i>Servicios
                         </a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>" href="<?= base_url('contacto'); ?>">
-                            <i class="fas fa-envelope me-1"></i>Contacto
-                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= ($pagina_actual ?? '') === 'terminos' ? 'active fw-bold' : '' ?>" href="<?= base_url('terminos'); ?>">
@@ -83,6 +77,12 @@ $nombreUsuario = session()->get('nombre') ?? '';
                     <?php elseif ($perfil == 2): ?>
                         <!-- Navbar del Cliente -->
                         <!-- Opciones principales a la izquierda -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= ($pagina_actual ?? '') === 'contacto' ? 'active fw-bold' : '' ?>" href="<?= base_url('contacto'); ?>">
+                                <i class="fas fa-envelope me-1"></i>Contacto
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link <?= ($pagina_actual ?? '') === 'productos' ? 'active fw-bold' : '' ?>" href="<?= base_url('admin/productos'); ?>">
                                 <i class="fas fa-boxes me-2"></i> Catálogo
@@ -98,19 +98,36 @@ $nombreUsuario = session()->get('nombre') ?? '';
                         <li class="nav-item flex-grow-1"></li>
 
                         <!-- Icono de usuario con nombre  -->
-                        <li class="nav-item d-flex flex-column align-items-center text-center me-2">
-                            <a class="nav-link text-success d-flex flex-column align-items-center" href="#">
-                                <i class="fas fa-user fa-lg mb-1"></i>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user fa-lg mb-1 me-2"></i>
                                 <span class="fw-bold"><?= esc($nombreUsuario); ?></span>
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="<?= base_url('perfil/editar'); ?>">
+                                        <i class="fas fa-user-edit me-2"></i> Editar perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="<?= base_url('mis-compras'); ?>">
+                                        <i class="fas fa-shopping-bag me-2"></i> Mis compras
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="<?= base_url('logout'); ?>">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <!-- Botón salir separado (visible en grandes pantallas) -->
-                        <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link text-danger d-flex align-items-center" href="<?= base_url('logout'); ?>">
-                                <i class="fas fa-sign-out-alt me-2"></i>
-                            </a>
-                        </li>
+
                     <?php endif; ?>
 
 

@@ -1,0 +1,27 @@
+Página web Centro Informático Regional
+
+Apellidos y nombres: Alegre Leonel Francisco, Aquino Carlos Paul
+
+Repositorio en GitGub:https://github.com/paulll09/Proyecto1_AquinoPaul_AlegreLeonelCIR
+
+- Usuarios - 
+
+(Administrador)
+
+Administrador1
+Usuario: aquinopaul2002@gmail.com
+Contraseña: 48197326Aquino
+
+
+(Cliente)
+
+Cliente1
+Usuario: leonel@gmail.com
+Contraseña: 48197326Aquino
+
+Cliente2
+Usuario: martin@gmial.com
+Contraseña: 48197326Aquino
+
+
+Número Grupo: 23

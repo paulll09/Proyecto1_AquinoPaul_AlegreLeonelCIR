@@ -42,7 +42,7 @@
                                     <ul class="sales-details-list">
                                         <?php foreach ($venta['detalles'] as $detalle): ?>
                                             <li>
-                                                <strong>Producto ID:</strong> <?= esc($detalle['id_producto']) ?> |
+                                                <strong>Producto:</strong> <?= esc($detalle['nombre']) ?> |
                                                 <strong>Cantidad:</strong> <?= esc($detalle['detalle_cantidad']) ?> |
                                                 <strong>Precio:</strong> $<?= esc(number_format($detalle['detalle_precio'], 2)) ?>
                                             </li>

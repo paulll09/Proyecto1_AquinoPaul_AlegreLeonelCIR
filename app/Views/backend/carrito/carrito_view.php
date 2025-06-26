@@ -126,74 +126,93 @@ Carrito de Compras
     </div>
 <?php } else { ?>
 
-<table id="mytable" class="table cart-shopping-table">
-    <?php if ($cart1 = $cart->contents()): ?>
-        <thead>
-            <tr>
-                <td>N° Item</td>
-                <td>Nombre</td>
-                <td>Precio</td>
-                <td>Cantidad</td>
-                <td>Subtotal</td>
-                <td>Acción</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $total = 0;
-            $i = 1;
-            foreach ($cart1 as $item): ?>
+    <table id="mytable" class="table cart-shopping-table">
+        <?php if ($cart1 = $cart->contents()): ?>
+            <thead>
                 <tr>
-                    <td><?= $i++; ?></td>
-                    <td><?= $item['name'] ?></td>
-                    <td>$ <?= number_format($item['price'], 2) ?></td>
-                    <td>
-                        <form action="<?= base_url('actualizar_item') ?>" method="post" class="d-flex align-items-center gap-2">
-                            <input type="hidden" name="rowid" value="<?= $item['rowid'] ?>">
-                            <input type="number" name="qty" value="<?= $item['qty'] ?>" min="1" class="form-control form-control-sm" style="width: 70px;">
-                            <button type="submit" class="btn btn-sm btn-primary" title="Actualizar cantidad">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                        </form>
+                    <td>N° Item</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                    <td>Subtotal</td>
+                    <td>Acción</td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total = 0;
+                $i = 1;
+                foreach ($cart1 as $item): ?>
+                    <tr>
+                        <td><?= $i++; ?></td>
+                        <td><?= $item['name'] ?></td>
+                        <td>$ <?= number_format($item['price'], 2) ?></td>
+                        <td>
+                            <form action="<?= base_url('actualizar_item') ?>" method="post">
+                                <input type="hidden" name="rowid" value="<?= $item['rowid'] ?>">
+                                <input
+                                    type="number"
+                                    name="qty"
+                                    value="<?= $item['qty'] ?>"
+                                    min="1"
+                                    class="form-control form-control-sm text-center"
+                                    style="width: 70px;"
+                                    onchange="this.form.submit()" 
+                                >
+                            </form>
+                        </td>
+                        <td>$ <?= number_format($item['subtotal'], 2);
+                                $total += $item['subtotal']; ?></td>
+                        <td>
+                            <?= anchor('eliminar_item/' . $item['rowid'], '<i class="fas fa-trash"></i> Eliminar', [
+                                'class' => 'cart-remove-btn',
+                                'title' => 'Eliminar producto'
+                            ]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="4" class="cart-total-cell">
+                        <i class="fas fa-calculator"></i>
+                        Total Compra: $<?= number_format($total, 2); ?>
                     </td>
-                    <td>$ <?= number_format($item['subtotal'], 2);
-                        $total += $item['subtotal']; ?></td>
                     <td>
-                        <?= anchor('eliminar_item/' . $item['rowid'], '<i class="fas fa-trash"></i> Eliminar', [
-                            'class' => 'cart-remove-btn',
-                            'title' => 'Eliminar producto'
-                        ]) ?>
+                        <a href="<?= base_url('vaciar_carrito'); ?>" class="btn btn-danger cart-clear-btn"
+                            title="Vaciar carrito completo">
+                            <i class="fas fa-trash-alt"></i>
+                            Vaciar Carrito
+                        </a>
                     </td>
                 </tr>
+                <div class="cart-actions-container">
+                    <a href="productos" class="btn cart-continue-btn" role="button">
+                        <i class="fas fa-arrow-left"></i>
+                        Continuar comprando
+                    </a>
+                </div>
+            </tbody>
+        <?php endif; ?>
+    </table>
+
+<form action="<?= base_url('guardar_venta') ?>" method="post" class="metodo-pago-form">
+
+    <div class="form-group">
+        <label for="metodo_pago">Selecciona un método de pago:</label>
+        <select name="metodo_pago" id="metodo_pago" class="metodo-pago-select" required>
+            <option value="" disabled selected>Elige un método de pago</option>
+            <?php foreach ($metodos_pago as $metodo): ?>
+                <option value="<?= esc($metodo['id_metodo_pago']) ?>">
+                    <?= esc($metodo['descripcion']) ?>
+                </option>
             <?php endforeach; ?>
-            <tr>
-                <td colspan="4" class="cart-total-cell">
-                    <i class="fas fa-calculator"></i>
-                    Total Compra: $<?= number_format($total, 2); ?>
-                </td>
-                <td>
-                    <a href="<?= base_url('vaciar_carrito'); ?>" class="btn btn-danger cart-clear-btn" 
-                       title="Vaciar carrito completo">
-                        <i class="fas fa-trash-alt"></i>
-                        Vaciar Carrito
-                    </a>
-                </td>
-                <td>
-                    <a href="ventas" class="btn btn-success cart-purchase-btn" role="button" title="Proceder al pago">
-                        <i class="fas fa-credit-card"></i>
-                        Comprar
-                    </a>
-                </td>
-            </tr>
-            <div class="cart-actions-container">
-    <a href="productos" class="btn cart-continue-btn" role="button">
-        <i class="fas fa-arrow-left"></i>
-        Continuar comprando
-    </a>
-</div>
-        </tbody>
-    <?php endif; ?>
-</table>
+        </select>
+    </div>
+
+    <button type="submit">
+        <i class="fas fa-credit-card"></i> Confirmar Compra
+    </button>
+</form>
+
 
 <?php } ?>
 

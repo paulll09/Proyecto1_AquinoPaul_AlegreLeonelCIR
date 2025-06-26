@@ -14,6 +14,11 @@ class CarritoController extends BaseController
     {
         $cart = \Config\Services::cart();
         $data = ['titulo' => 'Carrito de compras'];
+
+        // Cargar métodos de pago
+        $metodoModel = new \App\Models\MetodoPagoModel();
+        $data['metodos_pago'] = $metodoModel->findAll();
+
         return view('Views/backend/carrito/carrito_view', $data);
     }
 
@@ -22,28 +27,28 @@ class CarritoController extends BaseController
         $cart = \Config\Services::cart();
         $request = \Config\Services::request();
         $productos = new ProductoModel();
-        
+
         $id_producto = $request->getPost('id_producto');
         $nombre = $request->getPost('nombre');
         $precio = $request->getPost('precio');
-        
+
         // Verificar que el producto existe y tiene stock
         $producto = $productos->where('id_producto', $id_producto)->first();
-        
+
         if (!$producto) {
             session()->setFlashdata('mensaje_error', 'Producto no encontrado');
             return redirect()->back();
         }
-        
+
         if ($producto['stock'] < 1) {
             session()->setFlashdata('mensaje_error', 'No hay stock disponible para: ' . $nombre);
             return redirect()->back();
         }
-        
+
         // Verificar si ya existe en el carrito
         $existe_en_carrito = false;
         $cantidad_en_carrito = 0;
-        
+
         foreach ($cart->contents() as $item) {
             if ($item['id'] == $id_producto) {
                 $existe_en_carrito = true;
@@ -51,7 +56,7 @@ class CarritoController extends BaseController
                 break;
             }
         }
-        
+
         // Si ya existe, verificar que no exceda el stock
         if ($existe_en_carrito) {
             if (($cantidad_en_carrito + 1) > $producto['stock']) {
@@ -59,30 +64,30 @@ class CarritoController extends BaseController
                 return redirect()->to(base_url('ver_carrito'));
             }
         }
-        
+
         $data = array(
             'id' => $id_producto,
             'name' => $nombre,
             'qty' => 1,
             'price' => $precio,
         );
-        
+
         $cart->insert($data);
-        
+
         // Advertencia si queda poco stock
         if ($producto['stock'] <= 5) {
             session()->setFlashdata('mensaje_warning', 'Producto agregado. ¡Quedan pocas unidades! Stock: ' . $producto['stock']);
         } else {
             session()->setFlashdata('mensaje_exito', 'Producto agregado al carrito correctamente');
         }
-        
+
         return redirect()->to(base_url('ver_carrito'));
     }
 
     public function eliminar_item($id)
     {
         $cart = \Config\Services::cart();
-        
+
         // Obtener nombre del producto antes de eliminarlo
         $nombre_producto = '';
         foreach ($cart->contents() as $item) {
@@ -91,10 +96,10 @@ class CarritoController extends BaseController
                 break;
             }
         }
-        
+
         $cart->remove($id);
         session()->setFlashdata('mensaje_exito', 'Producto "' . $nombre_producto . '" eliminado del carrito');
-        
+
         return redirect()->to(base_url('ver_carrito'));
     }
 
@@ -103,7 +108,7 @@ class CarritoController extends BaseController
         $cart = \Config\Services::cart();
         $cart->destroy();
         session()->setFlashdata('mensaje_exito', 'Carrito vaciado correctamente');
-        
+
         return redirect()->to(base_url('ver_carrito'));
     }
 
@@ -115,7 +120,7 @@ class CarritoController extends BaseController
         $productos = new ProductoModel();
 
         $cart1 = $cart->contents();
-        
+
         // Verificar que el carrito no esté vacío
         if (empty($cart1)) {
             session()->setFlashdata('mensaje_error', 'El carrito está vacío');
@@ -142,9 +147,13 @@ class CarritoController extends BaseController
         }
 
         // Procesar la venta
+        $metodoPago = $this->request->getPost('metodo_pago');
+
+
         $data = array(
             'id_cliente' => session('id'),
             'venta_fecha' => date('Y-m-d H:i:s'),
+            'metodo_pago' => $metodoPago
         );
 
         $venta_id = $venta->insert($data);
@@ -175,14 +184,14 @@ class CarritoController extends BaseController
 
         // Vaciar el carrito después de guardar la venta
         $cart->destroy();
-        
+
         // Generar número de pedido para mostrar
         $numero_pedido = str_pad($venta_id, 6, '0', STR_PAD_LEFT);
-        
+
         // Mensaje de compra exitosa
         session()->setFlashdata('compra_exitosa', true);
         session()->setFlashdata('numero_pedido', $numero_pedido);
-        
+
         return redirect()->to(base_url('ver_carrito'));
     }
 
@@ -231,14 +240,18 @@ class CarritoController extends BaseController
                     'rowid' => $rowid,
                     'qty'   => $productoDB['stock']
                 ]);
-                
-                session()->setFlashdata('mensaje_warning', 
-                    'Cantidad ajustada por disponibilidad. Solo quedan ' . $productoDB['stock'] . ' unidades de ' . $item['name']);
+
+                session()->setFlashdata(
+                    'mensaje_warning',
+                    'Cantidad ajustada por disponibilidad. Solo quedan ' . $productoDB['stock'] . ' unidades de ' . $item['name']
+                );
             } else {
-                session()->setFlashdata('mensaje_error', 
-                    'No hay stock disponible para ' . $item['name']);
+                session()->setFlashdata(
+                    'mensaje_error',
+                    'No hay stock disponible para ' . $item['name']
+                );
             }
-            
+
             return redirect()->to(base_url('ver_carrito'));
         }
 

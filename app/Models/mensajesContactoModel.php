@@ -13,7 +13,7 @@ class mensajesContactoModel extends Model
     protected $returnType = 'array'; //define en que formato va a devolver los resultados 
     protected $useSoftDeletes = false; //los regitros se eliminan directamente de la base de datos
 
-    protected $allowedFields = [ 'nombre_completo','correo_electronico','telefono','asunto','mensaje'];
+    protected $allowedFields = [ 'nombre_completo','correo_electronico','telefono','asunto','mensaje','leido'];
     
     protected $useTimestamps = false; //no se van a usar los timestamps de creacion y actualizacion
     protected $createdField = ''; //campo de la fecha de creacion

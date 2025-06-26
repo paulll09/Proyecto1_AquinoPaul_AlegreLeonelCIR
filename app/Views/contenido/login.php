@@ -1,5 +1,17 @@
+
 <div class="login-container">
     <h3 class="login-title">Iniciar Sesión</h3>
+
+    <!-- MENSAJE DE USUARIO REGISTRADO -->
+    <?php if (session()->getFlashdata('mensaje')): ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('mensaje') ?>',
+                confirmButtonColor: '#FF0033'
+            });
+        </script>
+    <?php endif; ?>
 
     <?php if (isset($_GET['cerrada']) && $_GET['cerrada'] == 1): ?>
         <script>
@@ -11,8 +23,9 @@
         </script>
     <?php endif; ?>
 
+    <!--- MOSTRAR MENSAJES DE VALIDACIÓN -->
     <?php if (!empty($validation)): ?>
-        <div class="login-alert">
+        <div class="login-alert login-alert-error">
             <ul>
                 <?php foreach ($validation as $error): ?>
                     <li><?= esc($error) ?></li>
@@ -21,6 +34,14 @@
         </div>
     <?php endif; ?>
 
+    <!--- MOSTRAR MENSAJE DE CREDENCIALES INCORRECTAS -->
+    <?php if (!empty($mensaje_error)): ?>
+        <div class="login-alert login-alert-error">
+            <?= esc($mensaje_error) ?>
+        </div>
+    <?php endif; ?>
+
+    <!--FORMULARIO DE LOGIN -->
     <?= form_open('login/validar') ?>
     <?= csrf_field() ?>
 

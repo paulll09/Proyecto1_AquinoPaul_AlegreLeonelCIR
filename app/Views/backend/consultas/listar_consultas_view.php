@@ -1,4 +1,3 @@
-
 <?= $this->extend('plantillas/base') ?>
 
 <?= $this->section('titulo') ?>
@@ -9,6 +8,12 @@ Consultas de Clientes
 
 <div class="consultations-container">
     <h2 class="consultations-title">Consultas de Clientes</h2>
+
+    <?php if (session('mensaje')) : ?>
+        <div class="consultations-alert-success">
+            <i class="fas fa-check-circle"></i> <?= session('mensaje') ?>
+        </div>
+    <?php endif; ?>
 
     <?php if (empty($consultas)): ?>
         <div class="consultations-alert-info">
@@ -25,28 +30,31 @@ Consultas de Clientes
                         <th>Teléfono</th>
                         <th>Asunto</th>
                         <th>Mensaje</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($consultas as $consulta): ?>
                         <tr>
+                            <td><?= esc($consulta['id_mensajes_contacto']) ?></td>
+                            <td><?= esc($consulta['nombre_completo']) ?></td>
+                            <td><?= esc($consulta['correo_electronico']) ?></td>
+                            <td><?= esc($consulta['telefono']) ?></td>
+                            <td><?= esc($consulta['asunto']) ?></td>
+                            <td><?= esc($consulta['mensaje']) ?></td>
                             <td>
-                                <span class="consultations-id"><?= esc($consulta['id_mensajes_contacto']) ?></span>
+                                <?php if ($consulta['leido']): ?>
+                                    <span class="badge badge-success">Leído</span>
+                                <?php else: ?>
+                                    <span class="badge badge-warning">No leído</span>
+                                <?php endif; ?>
                             </td>
                             <td>
-                                <span class="consultations-name"><?= esc($consulta['nombre_completo']) ?></span>
-                            </td>
-                            <td>
-                                <span class="consultations-email"><?= esc($consulta['correo_electronico']) ?></span>
-                            </td>
-                            <td>
-                                <span class="consultations-phone"><?= esc($consulta['telefono']) ?></span>
-                            </td>
-                            <td>
-                                <div class="consultations-subject"><?= esc($consulta['asunto']) ?></div>
-                            </td>
-                            <td>
-                                <div class="consultations-message"><?= esc($consulta['mensaje']) ?></div>
+                                <?php if (!$consulta['leido']): ?>
+                                    <a href="<?= base_url('consultas/marcar/' . $consulta['id_mensajes_contacto']) ?>" class="btn btn-sm btn-success">Marcar como leída</a>
+                                <?php endif; ?>
+                                <a href="<?= base_url('consultas/eliminar/' . $consulta['id_mensajes_contacto']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta consulta?')">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
